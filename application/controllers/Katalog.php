@@ -23,7 +23,7 @@ class Katalog extends CI_Controller {
     {
         parent::__construct();
 
-        $this->load->model('M_katalog');
+        //$this->load->model('M_katalog');
 		cek_login();
     }
 
@@ -65,6 +65,7 @@ class Katalog extends CI_Controller {
         $this->load->view("layout/header");
         $this->load->view("layout/search");
 		$this->load->view("katalog/index_katalog", $datas);
+		$this->load->view('layout/footer');
         
 
         
@@ -77,14 +78,18 @@ class Katalog extends CI_Controller {
 		$this->load->view("layout/header");
         $this->load->view("layout/search");
 		$this->load->view("katalog/index_katalog", $datas);
+		$this->load->view('layout/footer');
 	}
 
-    public function detail($id)
+    public function detail($kd_produk)
     {
         
-        $data = $this->M_katalog->detail($id)->result();
+        $data['produk'] = $this->M_katalog->detail($kd_produk)->result();
 
-		
-        print_r($data);
+		//print_r($data['produk']);
+		$this->load->view("layout/header");
+        $this->load->view("layout/search");
+		$this->load->view("katalog/detail_produk",$data);
+		$this->load->view('layout/footer');
     }
 }

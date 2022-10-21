@@ -11,13 +11,15 @@
         	<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
                     <img src="<?= base_url("assets/img/ipon.jpg")?>" alt="Image" class="img-fluid" style="width:450px;height:250px;">
+                    
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2><?= $row->nama_produk?></h2>
-                        <!-- <a href="<?= base_url("katalog/detail/".$row->id)?>">View more</a> -->
+                        <a href="<?= base_url('katalog/detail/' . $row->kd_produk)?>"></a>
                     </figcaption>                    
                 </figure>
                 <div class="d-flex justify-content-between tm-text-gray">
                     <span class="tm-text-gray-light"><?= $row->satuan_dasar?></span>
+                    
                     <span><?= $row->nama_produk?></span>
                 </div>
             </div> 
@@ -31,7 +33,7 @@
         
     </div> <!-- container-fluid, tm-container-content -->
 
-    <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+    <!-- <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
         <div class="container-fluid tm-container-small">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12 px-5 mb-5">
@@ -67,13 +69,6 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     
-    <script src="<?= base_url("assets/js/plugins.js")?>"></script>
-    <script>
-        $(window).on("load", function() {
-            $('body').addClass('loaded');
-        });
-    </script>
-</body>
-</html>
+   

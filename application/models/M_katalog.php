@@ -9,9 +9,9 @@ class M_katalog extends CI_Model
 
         return $this->db->query($query);
     }
-    function detail($id)
+    function detail($kd_produk)
     {
-        $query = "SELECT * FROM produk where id = $id";
+        $query = "SELECT * FROM pecah_stok where kd_produk = $kd_produk";
 
         return $this->db->query($query);
     }
